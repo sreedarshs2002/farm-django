@@ -1,0 +1,175 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SK FARMS</title>
+    <link rel="stylesheet" href="{% static 'skfarms.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+</head>
+<body>
+    <header>
+        <div class="main-header">
+            
+            <img src="{% static './images/logoheading.jpeg' %}" alt="" height="90px">
+                
+
+            <div>
+                <nav>
+                    <ul class="nav-div">
+                        <li><a href="{% url 'index' %}" class="nav-a">Home</a></li>
+                        <li><a href="{% url 'about' %}" class="nav-a">About Us</a> </li>
+                        <li><a href="{% url 'cows' %}"  style="border-bottom: 5px solid green; padding-bottom: 5px; color: green; text-decoration: none;"> Our Cows</a></li>
+                        <li><a href="{% url 'products' %}" class="nav-a">Products</a> </li>
+                        <li><a href="{% url 'gallery' %}" class="nav-a"> Gallery</a></li>
+                        <li><a href="{% url 'contact' %}" class="nav-a">Contact Us</a> </li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div>
+                <a href="./contact.html" style=" text-decoration: none; border-radius: 10px; border: 2px solid black; color: white; background-color: green; display: flex; align-items: center;padding-left: 20px;padding-right: 20px; gap: 3px; font-family: Arial, Helvetica, sans-serif;"> <span class="material-symbols-outlined">call</span> <p>Order Now</p></a>
+            </div>
+        </div>
+    </header>
+
+    <section>
+        <div class="cows-back-img">
+            <div class="cow-back-content">       
+                <h1 style="color: white; font-size: 75px; border-bottom: 4px solid green;">Our Cows </h1>
+                <h4 style="color: white;font-family: Arial, Helvetica, sans-serif;font-size:20px ;margin-top: -40px;">Healthy Cows, Happy Farm,Pure Milk</h4>
+                <p  style="color: white; font-family: Arial, Helvetica, sans-serif;">At SK Farms, Our cows are more than just animals- <br> they are a part of our family. We provide them with <br> natural food,clean water, a stress-free environment <br> and lots of care.</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div style="text-align: center;">
+            <h1 style="color: green;">We Care for Them, They Care for Us</h1>
+            <p style="font-family: Arial, Helvetica, sans-serif;">Our cows are raised with love, care and respect. This is what makes our milk pure and nutritious.</p>
+            <div class="care-points">
+                <div class="inner-care-points">
+                    <img src="{% static './images/flowericon-div.png' %}" height="70px" alt="" style="border-radius: 100px;">
+                    <div>
+                        <h3 class="h-care">Natural Feed</h3>
+                        <p class="p-care">We feed our cows <br> with fresh, natural <br> and nutritious feed.</p>
+                    </div>
+                </div>
+
+                <div class="inner-care-points">
+                    <img src="{% static './images/cleanwater.png' %}" height="70px" alt="" style="border-radius: 100px;">
+                    <div>
+                        <h3 class="h-care">Natural Feed</h3>
+                        <p class="p-care">We feed our cows <br> with fresh, natural <br> and nutritious feed.</p>
+                    </div>
+                </div>
+
+                <div class="inner-care-points">
+                    <img src="{% static './images/heart.png' %}" height="70px" alt="" style="border-radius: 100px;">
+                    <div>
+                        <h3 class="h-care">Natural Feed</h3>
+                        <p class="p-care">We feed our cows <br> with fresh, natural <br> and nutritious feed.</p>
+                    </div>
+                </div>
+
+                <div class="inner-care-points">
+                    <img src="{% static './images/safety.png' %}" height="70px" alt="" style="border-radius: 100px;">
+                    <div>
+                        <h3 class="h-care">Natural Feed</h3>
+                        <p class="p-care">We feed our cows <br> with fresh, natural <br> and nutritious feed.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="last-sec">
+
+            <img src="{% static './images/cowimg4ourcows.png' %}" height="190px" style="border-radius: 10px;" alt="">
+
+            <div class="inner-last-sec">
+                <h1 style="color: green;">Happy Cows, Better Milk</h1>
+                <p style="font-family: Arial, Helvetica, sans-serif;">We believe that happy cows give the best milk. Our open and clean <br> surroundings, fresh air and sunlight keep our cows healthy and active.</p>
+                <div class="inner-inner-last-sec">
+                    <div class="inner-tips-div">
+                        <img src="{% static './images/cowhead4ourcows.png' %}" height="40px" alt="">
+                        <p>Well Sheltered</p>
+                    </div>
+                    <div class="inner-tips-div">
+                        <img src="{% static './images/freshair4ourcows.png' %}" height="40px" alt="">
+                        <p> Fresh Air <br>Environment </p>
+                    </div>
+                    <div class="inner-tips-div">
+                        <img src="{% static './images/sunlight4ourcows.png' %}" height="40px" alt="">
+                        <p>Open Space & <br> Sunlight</p>
+                    </div>
+                    <div class="inner-tips-div">
+                        <img src="{% static './images/natural4ourcows.png' %}" height="40px" alt="">
+                        <p>Natural & Safe <br>Surroundings</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer style="background-color: rgb(17, 85, 17); margin-left: 50px; margin-right: 50px; margin-top: 30px;">
+        <div class="footer-flex">
+        
+            <div class="first-foot">
+                <img src="{% static './images/footercow.png' %}" height="200px" alt="">
+
+                <div>
+                    <h1 style="color: white;">Visit Our Farm</h1>
+                    <p style="color: white;">We welcome you to visit our farm and experience <br> the level and caring we give to our cows.</p>
+                    <a href="./contact.html" style="justify-content: center; color: white; text-decoration: none; display: flex;align-items: center; gap: 9px; border: 3px solid white; width: 200px; border-radius: 7px;">
+                        <p>Plan Your Visit </p> <span class="material-symbols-outlined">arrow_forward</span> 
+                    </a>
+                </div>
+            </div>
+
+            <!-- second coloumn -->
+
+            <div style="color: white;">
+                <h2>Quick Links</h2>
+                <a href="./index.html" class="footer-links">Home</a> <br>
+                <a href="./about.html" class="footer-links">About Us</a> <br>
+                <a href="./cows.html" class="footer-links">Our Cows</a> <br>
+                <a href="./products.html" class="footer-links">Products</a> <br>
+                <a href="./gallery.html" class="footer-links">Gallery</a> <br>
+                <a href="./contact.html" class="footer-links">Contact Us</a> <br>
+            </div>
+
+            <!-- third coloumn -->
+
+            <div style="color: white;">
+                <h2>Our Products</h2>
+                <a href="" class="footer-links">Diary Products</a> <br>
+                <a href="" class="footer-links">Milk</a> <br>
+                <a href="" class="footer-links">Paneer</a> <br>
+                <a href="" class="footer-links">Ghee</a> <br>
+                <a href="" class="footer-links">Other Products</a> <br>
+                <a href="" class="footer-links">All Products</a>
+            </div>
+
+
+            <!-- fourth coloumn -->
+
+            <div style="color: white;">
+                <h2>Contact Us</h2>
+                <p style="margin: 2px 0;">SK Farms </p>
+                <p style="margin: 2px 0;"> Alappuzha,Kerala ,India </p>
+                <div style="display: flex;gap: 5px; align-items: center;margin-top: -10px;"> <span class="material-symbols-outlined" style="font-size: 17px;">call</span> <p>+91 62******64</p></div>
+                <div style="display: flex; gap: 5px; align-items: center;margin-top: -25px;"> <span class="material-symbols-outlined" style="font-size: 17px;">mail</span> <p>skfarmsdiary@gmail.com</p></div>
+            </div>
+
+        </div>
+
+        <div style="text-align: center;background-color: rgb(2, 62, 2);">
+            <p style="color: white;font-family: Arial, Helvetica, sans-serif;font-size: 12px;padding-top: 3px;padding-bottom: 3px;">Ⓒ2025 SK Farms.All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

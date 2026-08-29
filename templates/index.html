@@ -1,0 +1,307 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SK FARMS</title>
+    <link rel="stylesheet" href="{% static 'skfarms.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+</head>
+<body>
+    <header>
+        <div class="main-header">
+            
+            <img src="{% static './images/logoheading.jpeg' %}" alt="" height="90px">
+                
+
+            <div>
+                <nav>
+                    <ul class="nav-div">
+                        <li style="border-bottom: 5px solid green; padding-bottom: 5px; color: green;">Home</li>
+                        {% if user.is_authenticated %}
+                            <li>hey , {{user.username}} </li>
+                            <li><a href="{% url 'logout' %}" class="nav-a">logout </a></li>
+                        {% else %}
+                            <li><a href="{% url 'register' %}" class="nav-a">Register</a> </li>
+                            <li><a href="{% url 'login' %}" class="nav-a">login</a> </li>
+                        {% endif %}
+                        <li><a href="{% url 'about' %}" class="nav-a">About Us</a> </li>
+                        <li><a href="{% url 'cows' %}" class="nav-a"> Our Cows</a></li>
+                        <li><a href="{% url 'products' %}" class="nav-a">Products</a> </li>
+                        <li><a href="{% url 'gallery' %}" class="nav-a"> Gallery</a></li>
+                        <li><a href="{% url 'contact' %}" class="nav-a">Contact Us</a> </li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div>
+                <a href="{% url 'contact' %}" style=" text-decoration: none; border-radius: 10px; border: 2px solid black; color: white; background-color: green; display: flex; align-items: center;padding-left: 20px;padding-right: 20px; gap: 3px; font-family: Arial, Helvetica, sans-serif;"> <span class="material-symbols-outlined">call</span> <p>Order Now</p></a>
+            </div>
+        </div>
+
+        <div class="back-img">
+            <div class="inner-back-img">
+                <h1 style="font-size: 50px;">Pure Milk. <br> Healthy Cows. <br> <span style="color: green;">Better Life</span></h1>
+                <p style="font-size: 19px; font-family: Inter, Helvetica, Arial, sans-serif;">At SK Farms, we are dedicated to raising <br> healthy cows and providing pure, natural <br> dairy Products.</p> <br>
+                <div style="display: flex; gap: 60px;">
+                    <a href="" style="font-family: Arial, Helvetica, sans-serif; margin-left: 25px; text-decoration: none; color: white; background-color: green;border-radius: 10px;padding: 10px;">Explore Our Farm  </a> 
+                    <a href="{% url 'cows' %}" style="font-family: Arial, Helvetica, sans-serif; text-decoration: none; color: green; border: 2px solid green; border-radius: 10px;padding: 10px 40px;">Our Cows </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- header ends here -->
+
+    <section>
+        <div class="info-div">
+            <div class="inner-info-div">
+                <img class="icons" height="70px" width="70px" src="data:image/jpeg;base64,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" alt="">
+                <h3 class="first-sec">Happy & Healthy Cows</h3>
+                <p>We provide the best care, Nutritious <br>feed and clean environment.</p>
+            </div>
+
+
+            <div class="inner-info-div">
+                <img class="icons" height="70px" width="70px" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAJQAtAMBEQACEQEDEQH/xAAcAAEAAgMBAQEAAAAAAAAAAAAABgcBBAUDCAL/xABGEAABAwICAwoLBgQGAwAAAAABAAIDBAUGEQchMRI2QVFhcXJzscETFCIjMjRigZGy0RUzQkOCoRZSY+EkJkWSwvEXRFP/xAAaAQEAAgMBAAAAAAAAAAAAAAAAAQMCBAUG/8QALhEAAgEDAgUDBAICAwAAAAAAAAECAwQRBTESEyEyQTNRcSI0QoEjYRRSJEOx/9oADAMBAAIRAxEAPwC8UAQGtW1cNDTvqKl7Y4Y2kuceBM4MJyUFxMpjFuJ6jENVl5cdFGfNRZ7fadyqiUmzzd3eSrSwtjgLA0ggCAw4hu0qMk4zsMxxqckGcigBCAe5AYQGUAQBAEAQH6ikfDI2SJ7mSMObXNORBUoyjJx6otvA2Lm3mLxKuIbXxjUSdUoy2jl5FdGWT0NleKsuGW5MVmdEygCAID8uOQJzy5UBT+PsTG8VvidJKTQwHLVsldx8o4lTKWeh52/u3Vlwx2RElWc0IAgCAtXRxY7e6wMrZ6WOaedzs3SN3WQBIAGexXwisHodPoQ5Sm11ZJpcPWaYnwtqo3Z7c4WrLhRuuhSe8TWkwdh2T0rPSjot3PYo4EVuzoP8TWfgPDTv9N3PRnkH/JRwRMHYW/8Ar/6a79HeHnehBOzmnd3py4mL063fg8JNGtld6E1Wz9YPco5aMHplE13aMLd+GvqgeUNPcnLRg9Jpe7NeTRfD+VdJB0ogVHL/ALMXpMPEiCXy1TWW5SUNSWucwBzXN2OB2FVyTTOTcUHRm4M0FBQEAQH7gqJqaZk1PI6OWM7pj2nWCpTx1M4ScZcS3LswfiGO/wBtbKSBUxZNnjHAePmKvjLKPT2lyq8M+TvrI2ggB2ICFaScQG3UAt1M/KpqwQ4g62R7D7zsWE5YRzdRuOXDgjuyptmriWujzoUgIAoAUgu7A8BgwpbmuBaXRbog8utbMeiPVWceGhFHOvGGL3WXOpq6LEUtNHK4FkPlEMGQHHyLFpt7lVS1rSk5RqYNP+G8ZRfc4la7pA/QqMS9yv8AxrpbTH2Zj+L0brSSc7vq1MTHLvV+SMH/AMhxav8ABS+9n9k+sj/nL2M/aOP4fTtdNJzZdzkzP2J5l6vCM/xFjKLXLh1rh7IP1KcUvYf5F2t6ZKMP1tZcLYypuNGaSdznAw69QByB18ayX9m7RnKcMyWGVZpIk3eLKj2I42/t/dVVH9RwdSf85GFgc8IAgCA62GLzJYrvFWNJMRO4mZn6TOH4bVlGWDbta7o1M+C9KaWOeFksTg5j2hzXDhBWweoUlJZR6oSeU8rIYXyyu3LGNLnE8ACESfCssoW/3OS8XeprpCcpHZMH8rBsHf71rSeWeTuKvOqOTOeoKAgCAKAd3B1jdfb1HE8HxWI+EnPAWj8Pv7FlBZZuWVvzqn9It69XKnsdqlq5hkyJuTWDVujwNC2G8I9FWqxow4n4IazShH+Za5PdIFXzEc1atH/U2GaTrefvKCpHMQVKqIzWq0vKNiPSTZnenDVM/QD3qeYjNanQNhukTD52yzt54SnHEzWpW78nvHjvDb/9Q3PShkHcp44mav6D/I2Y8Y4dkyDbvTDP+YlvaE44mauqL2kdtr2uaHNOYIzBCyNgr3SHhJ87pLxb2ufKAPGIhr3QH4m/RVTjnqcnULNy/kgVqqThtNbhSQEAQBQC09Ft4NTbpLZO/OSl1x57Sw/Qq+nLKPQaZX4oOD3RO90B/wBLPJ1CH6TLn4jh808ZykrJPB/p2u7h71jUeEc/Uazp0cLyVCtdHmwpAQBAZDSSA0ZuJyAHCm5KTbwi68EWMWOyxslGdVN5yc8ROxvuGpbEVhHqLO3VGml5ZBNJN9NxuYoIH501ITnl+KTh+HeVXUl4OVqVxxz4FsiHKo5bCkBMAbEAUA7GErebpiOhpiPN7vwkh4mt1/Qe9ZQjlm1Z0uZWii4cR3I2ex1da0N3cbMowdhdsH7rYk0kekr1OVTcl4NfC2IqbEFD4WLJlQwATQ562n6KItMrtrmNeGVuRDH2DvBmW72tnkZbqeBo2cbm94WE4eTn39j/ANlP9le8GYVODihSAgG1AdnCNzNpxDR1BOUbniKU+y7V+21TB4Zt2dZ06yfuXoNi2T1GSpdKdaai/RUodm2mi2crtZ7lTU9jgapUzUUfYhirOWEAQBATHRtYjcbr4/UszpaXW0nY6Tg+Gv8AZWQjl5OpptvxT42uiJ5jS8Ps9lldAHOqZvNw5NJyJ2k8ysk8I613VdOm3FdSk3hwcS/dZ56y4HMrXeTy7jLP1I/Pw+KgjBlM+wwPcpICjICAsfRLbgGVlze3b5mM8m09yuprodzSqWE5s/Wlm5hsdJa2HyneekGfANQz9+fwSq8DVav0qmiF4dN3huEdVZYKiSZh2RsOThwh3BksIqSZzrbnQnxU0XdQSTVFFFLV05p5nt85C5wO5PCMxqWwtj00W5RXEitNImF47c4XSgDWU8r9zLFwMceEchVU446nE1G0UP5I7EHVRyQgCAa+BCUX1hqu+0LDRVRdm58Q3R5RqK2I9Uett58ykpFNYrqfG8SXGbPMeHLR+nV3Kib6nm7ufHWkzlKDVCAIAoBdeAI2MwnQ7hoBc1zjynMrZguh6mxSVCJ2TVUhldD4xCXt1OZuxmDzLLoXuUdmzMlJSy/eU8L8/wCZgKjCDjB74NWawWecESW2lOf9MJwoxdCk94o0ZcFYdl222NvQJb2FRwRKnZUHvE0JtHWH5B5tlVD0Jie3NRy4lb063fg0pdGFuP3NxrW9MMd2AKOUil6VS8NmnLovIPmLsDyPh+hUcorekrxImuG7S2y2WmoA4PdG3y3gZbpx1kqxLB06FJUqagj8VOHLVV3J1wq6RtRUOAbnKS4ADYADqCNJkSt6cp8cl1NuaoobZT7qeWCliH8xDAhm5U6fnBzbfiq1XK6C30EzppSxzt21vk6uVQpJvBVC7pTnwRfU5ulEf5VPXx9qiexRqXoMqEqg82EAQDhCAtTRvXt/hvwTjn4Kd7eYaj3q6L6Hf0+vigkysKqTwtTPIfzJXv8Ai4lUs4c3mTZ5IYBAEAUAu7AW9O39A9pWzHY9TZehD4Krxw1pxbdM2gnww4PYaqZ9xwr1v/IkcmGeaD7iaWLq3lvYscyNaNSce14N2G/XiD7q6VY55ie1TxSLVdVl+TN2HGWIodlykd02h3cp45Fsb+uvJuw6QcQR7ZaeQe1F9Cp5kixapWW5uxaTLo3IS0dK/wD3BTzC2OrTW8TfptJxfIyOa1DynBubJtmZ5QpVQuhqqk0uEsGaR0dO+RustYXAHmVp1nLEclP3HHt8rsxDMylYdghbr+JVEqjPPVdRqyeE8EanlkqJfDTyvllO18ji482ZWDbNGdSU+5kn0Zb648//AIP7lnT3N7TPXJrpR3qu6+PtVk9jp6n9uyoCqDzYQBAEB3LDdzb6WWIOID5d3kDl+EDuUpmzRq8McHDWJrBSAgCAKAXdgLepbugfmK2Y9p6my9CHwVbjffbdOuHyNVE+5nBvvuJHDWJqBSgEAUAKQelN6zD1je0J5M6fej6CqvUpuqd2LZex66Xaz54Gxaz3PHvcyhBKtGW+uPqH9yzp7nR0z1ya6Ud6ruvj7VZPY6ep/bsqAqg82EAQBAZDS4ZgZoMHtXxmG4VcRGtk72/BxCPfBnUWJNHghgEAQBQC7sBb1Ld0D8xWzHtPU2XoQ+Crcb77bp1w+Rqpn3s4N99xI4axNQIAgCAID0pfWYesb2hGZ0u9fJ9BVXqU3VO7Fss9dLt/R88DYtZ+Tx73MoQSrRlvrj6h/cs6e50dM9cmulHeq7r4+1WT2Onqf27KgKoPNhAEAQEqwjZvtG3zykN8mcsGfRae9Slk26NBzjlGjjWlNLim4MyyD5PCDmdr+qmawyb6HBXkjhrE0wgCAKAXdgLepbugfmK2Y9p6my9CHwVbjffbdOuHyNVM+9nBvvuJHDWJqBAEAQBAelL6zD1je0IzOl3r5PoKq9Sm6p3Ytlnrpdv6PngbFrPyePe5lCCVaMt9cfUP7lnT3Ojpnrk10o71XdfH2qyex09T+3ZUBVB5sIAgCAt/RvRCLC0L3gZzSOk92wdivhHoeisKWKCyiOaWKEx3CjrgPJmYY3H2m/2P7LCouuTU1WniSmiBqs5AQBAFALuwFvUt3QPzFbMe09TZehD4KtxvvtunXD5Gqmfezg333EjhrE1AgCAIAgPSl9Zh6xvaEZnS718n0FVepTdU7sWyz10u39HzwNi1n5PHvcyhBKtGW+uPqH9yzp7nR0z1ya6Ud6ruvj7VZPY6ep/bsqAqg82EAQGWNL3tY0ZucQGjjJ2ITFOTwvJ9AWmjFBbKWkH5MTWnny1rZSwj19OPBBI5WO7V9rYdnjY3OaHz0XHm0HV7xmomsoovaPNotLcpMZZav34FrnlggCAKAXdgLepbugfmK2Y7HqbL0I/BVuN99t064fI1US72cG++4kcNQagQBAEAQHpTesw9Y3tCGdLvXyfQVV6lN1TuxbLPXS7f0fPA2LWfk8e9zKEZJVox32R9Q/uVlPc6OmesTXSlvWd18fas6mx09S+3ZUBVB5sIAgJLo+tRuWI4XvbuoaQiZxOzMHyR8exZU45Zv6fRc62fCLoyWxk9L0Dhm0ghAUhjWymy32aNjf8ADzecgPEDtb7j3LXnHDPMX1Dk1XjZnBWJpBAFALuwGf8AKdv6B+YrZhsepsvQj8FX44hlGKbnIYpAwzDJxYcj5DeFUyX1M4d9CXPk8EfD2nUHD4rFmnws/SIgZKAFICA9Kb1mHrG9oQzpd6+T6Cq/UZeqPYtl7Hrpdv6PnuKN8sjYomOfI45NY0ZknkC1sZyeQ4XKWETKxaPK+u3Mt0f4nAde5GRkPcFYqXudOhpk5danQsSzWC22SLc0NO1jiPKmdre7nKtSS2OxSt6dFYiiI6TL9QT25tsppmzTGQOduDmGAcZ41hUawc7UriDhy0yteJUo4YQAcZ2IC5NHllNpsjZJ25VVV5yT2W/hb8O1XwWEemsLflUsvdkrWZvBAR3GuHxfbQ5kYHjcXlwE8fF71jKOUal5bqtTx5KTex0b3Me0tc0kFp2tPEVrY8HmJJxeGYUmITALYwDiG2Cw09FPVRwVEGbSyRwbmM9RHGr4SWD0Vjc0+UoN9USyOro5x5FRA8cjwVnlG+pwfkxLQUFT97SU0o9qNrkMXTpvdI58+FLBPn4S1UoPsM3PYowjCVrRlvE0pcBYek9GkfH0JXKOBFTsLd+DQm0a2h481UVUf6gVjy0Uy0ui9uhozaLojn4C6PB9uIFQ6RW9Jj4kaR0Z3KKaN8NwpX7lwPlBzdhHFmnKwVLTKkZJplnPjD4TE4+k3cnLmVp2sdMM5tnsNsscRbQ0zIyfSlOtx5yoxgqpUKdLZHLv2ObTat1FE/xypH5cWsN6Ttg7VDmkUV7+lSXuyur7i663kuZJMYKc/kQnIEcp2lUubZxq99VqvfCOBq4BksUaQQBASjAOHzersJ52Z0dK7dPJ2PdwN+qzpxydGwtuZPieyLlaMsgNgV56MygMoDDhmMkBXGkfCpcXXm3R5u/9mNo1n2x3qqcfJx9Rs8/yw/ZXCqOJ5CEGDrGR186A/TSWeiS3mOSdTJSa2ZsRXCtiOcdXUN5pSpyzONapHaTN2HE19h+7u1WMuOTPtTjkWK8rr8jdgx1iSIZGvEo/qQsPYAp5ki6Oo3C8nQh0lXph89BRyDoOb3rLmMsWqVs9Ujfh0oTDLxi1sd1cuXaFPMLo6t7xN+HSdQHLw9BUs6JBU8xF0dVpvdHrVaSrU2nLqaCokly1Mc0NHvKc2JlLU6SX07kGvmLbteXObLUeBpzsgh1N952lVuo2cqvfVavnCOFqyWJqZCEBAEBv2W01V5r2UlI3NztbnHYxvGVMVll9ChKtPhiXhZbVTWegio6RuTGDW47XHhJ5SthLB6ijSjShwxOgpLQgCAID8vAIyOWvVrQjCe5VuOcFvo3yXK0xF9OSXSwtGuPlA4uRVTh5Rw72wafHTIIqjk4YQgIAgCAIAgCAZoTkZnjUEBSAgCAIDdtFqq7xWNpaGIvkO0/hYOMlSotsuoUJ1pcMEXPhnD1NYKHwMHlTP1zTEa3n6K+MUkemt7aNCOInbWRsBAEAQBAYKAwWg7RmhBAsW4Cjq3SVtla2KdxJfBsY88nEf2VcoZ2OXdadGf1U+jKzqIJqWZ0NRC+GVmpzJAQ4KlrBw5wlB4kjzQwCAIAgCAIAgCAIAgCA7+GsKV9+kD2MdBSA+VO9uo9EcKyjBs3raynWfXoi3LHZKKyUgpqGLcja97tbnnjJV6WDv0aEKUeGKOopLwgCAIAgCAIAgMIDkXyxW69U5bXwBzmjNr2nJzeYqJRTKK9vTqR+pFI3SnbR3OrpI3OdHA8taXbSOVa0lh9DzFeCpzaRruGRy5FCZT/ZhSAgCAIAgCAKACMvgi6jOWT3R1h23XOndX10bppGPIbG4+QMuThVsYo7On2tOa4pIs6NrY2hjGhrQBkAMslcdpJLoj0CEhAEAQBAf//Z" alt="">
+                <h3 class="first-sec">Pure & Natural Milk</h3>
+                <p>Fresh ,unadulterated milk <br> delivered straight from our farm.</p>
+            </div>
+
+            <div class="inner-info-div">
+                <img class="icons" height="70px" width="70px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDisQNB40xebgW37PnP-cOyI1RKQiH1mMAHMAszPaAXA&s=10" alt="">
+                <h3 class="first-sec">Sustainable Farming</h3>
+                <p>We follow eco-friendly and <br> sustainable farming practices.</p>
+            </div>
+
+            <div class="inner-info-div">
+                <img class="icons" height="70px" width="70px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQSw8Ujokyv9TEXYNVb4td2sPnIjpA0ajTEoQYY0KD9Q&s=10" alt="">
+                <h3 class="first-sec">Quality You Can Trust</h3>
+                <p>Commited to quality, health <br> and customer satisfaction.</p>
+            </div>
+        </div>
+
+        <!-- first box ends here -->
+
+        <div class="sec-box">
+            <div style="text-align: center;">
+                <h1 style="color: green; ">Our Dairy Products</h1>
+                <img height="30px"  src="{% static './images/nothing.png' %}" alt="">
+            </div>
+
+            <!-- products section -->
+
+        <div class="products">
+        {% for p in daily_prd|slice:":5" %}   
+            
+                <div class="inner-products">
+                    <img src="{{ p.img.url }}" height="180px" width="200px" style="border-top-left-radius: 10px;border-top-right-radius: 10px; " alt="">
+                    <h2 class="product-name">{{p.name}}</h2>
+                    <p class="font-select">{{p.desc}}</p>
+                    <button style="text-align: center; color: white; background-color: green;border-radius: 10px;padding-right: 30px;padding: 10px; padding-left: 20px;">Know More</button> 
+                </div>
+         {% endfor %}   
+
+        </div>
+
+
+            <p style="text-align: center;margin-top: 70px; margin-bottom: 20px;"><a class="a-view-all" href="{% url 'products' %}" style="text-decoration: none;color: green;border: 3px solid green;padding: 12px;padding-left: 20px;padding-right: 20px;border-radius: 10px;">View All Diary Products</a></p>
+        </div>
+        
+
+    
+
+
+
+        <!-- other products -->
+
+        <div class="sec-box-1">
+            <div style="text-align: center;">
+                <h1 style="color: green;">Our Other Products</h1>
+                
+            </div>
+
+            <!-- products section -->
+
+
+            <div class="products">
+                {% for p in nondaily_prd|slice:":5" %}
+                <div class="inner-products">
+                    <img src="{{p.img.url}}" height="180px" width="200px" style="border-top-left-radius: 10px;border-top-right-radius: 10px; " alt="">
+                    <h2 class="product-name">Fresh Vegetables</h2>
+                    <p class="font-select">Locally grown,fresh <br> and chemical-free.</p>
+                    <button style="text-align: center; color: white; background-color: green;border-radius: 10px;padding-right: 30px;padding: 10px; padding-left: 20px;">Know More</button> 
+                </div>
+                {% endfor %}
+
+            </div>
+
+            <p style="text-align: center;margin-top: 70px;"><a class="a-view-all" href="{% url 'products' %}" style="background-color: rgba(255,255,255,0.3); text-decoration: none;color: green;border: 3px solid green;padding: 12px;padding-left: 20px;padding-right: 20px;border-radius: 10px;">View All Products</a></p>
+        
+
+            <div class="highlights-outer">
+                <div class="why-div">
+                    <h1 style="color: green;">Why Choose SK Farms ?</h1>
+                    <div style="display: flex; align-items: center; gap: 10px; font-family: Inter, Helvetica, Arial, sans-serif;"><span class="material-symbols-outlined" style="color: green;">check_circle</span> <p>Well cared and healthy cows</p></div>
+                    <div style="display: flex; align-items: center; gap: 10px; font-family: Inter, Helvetica, Arial, sans-serif;"><span class="material-symbols-outlined" style="color: green;">check_circle</span> <p>Pure, natural and chemical-free products</p></div>
+                    <div style="display: flex; align-items: center; gap: 10px; font-family: Inter, Helvetica, Arial, sans-serif;"><span class="material-symbols-outlined" style="color: green;">check_circle</span> <p>Hygeinic milking and processing</p></div>
+                    <div style="display: flex; align-items: center; gap: 10px; font-family: Inter, Helvetica, Arial, sans-serif;"><span class="material-symbols-outlined" style="color: green;">check_circle</span> <p>Eco-friendly and sustainable farming</p></div>
+                    <div style="display: flex; align-items: center; gap: 10px; font-family: Inter, Helvetica, Arial, sans-serif;"><span class="material-symbols-outlined" style="color: green;">check_circle</span> <p>Supporting local & natural living</p></div>
+                </div>
+
+                <div class="highlights">
+                    <h1 style="color: green;">Our Farm Highlights</h1>
+                    <div style="display: flex;gap: 30px;">
+                        <div class="first-high">
+                            <img src="{% static './images/cowicon.png' %}" height="70px" alt="">
+                            <h1 style="color: green;font-family: Inter, Helvetica, Arial, sans-serif; margin-top: 3px;">50+</h1>
+                            <p style="font-family: Inter, Helvetica, Arial, sans-serif;">Happy Cows</p>
+                        </div>
+
+                        <div class="first-high">
+                            <img src="{% static './images/icona.png' %}" height="70px" alt="">
+                            <h1 style="color: green;font-family: Inter, Helvetica, Arial, sans-serif;margin-top: 3px;">100%</h1>
+                            <p style="font-family: Inter, Helvetica, Arial, sans-serif;">Natural Feed</p>
+                        </div>
+
+                        <div class="first-high">
+                            <img src="{% static './images/iconb.png' %}" height="70px" alt="">
+                            <h1 style="color: green;font-family: Inter, Helvetica, Arial, sans-serif;margin-top: 3px;">20+</h1>
+                            <p style="font-family: Inter, Helvetica, Arial, sans-serif;">Acres of Green <br> Farm</p>
+                        </div>
+
+                        <div class="first-high">
+                            <img src="{% static './images/iconc.png' %}" height="70px" alt="">
+                            <h1 style="color: green;font-family: Inter, Helvetica, Arial, sans-serif;margin-top: 3px;">500+</h1>
+                            <p style="font-family: Inter, Helvetica, Arial, sans-serif;">Happy <br> Customers</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cust-div">
+            <div style="text-align: center;">
+                <h1 style="color: green;">What Our Customers Say</h1>
+                <img height="30px" src="{% static './images/nothing.png' %}" alt="">
+            </div>
+
+            <div class="review">
+                <div class="inner-review">
+                    <p>⭐⭐⭐⭐</p>
+                    <p>The milk from SK farm is so pure <br> and fresh! My whole family loves it</p>
+                    <div style="display: flex; gap: 10px;">
+                        <img src="{% static './images/priya.png' %}" height="60px" alt="" style="border-radius: 100%;">
+                        <p>-Priya S <br> Kozhikode</p>
+                    </div>
+                </div>
+
+                <div class="inner-review">
+                    <p>⭐⭐⭐⭐</p>
+                    <p>The milk from SK farm is so pure <br> and fresh! My whole family loves it</p>
+                    <div style="display: flex; gap: 10px;">
+                        <img src="{% static './images/anjali.png' %}" height="60px" alt="" style="border-radius: 100%;">
+                        <p> -Anjali Suresh <br> Alappuzha</p>
+                    </div>
+                </div>
+
+                <div class="inner-review">
+                    <p>⭐⭐⭐⭐⭐</p>
+                    <p>We are fully satisfied with their diary<br> products . Quality is excellent</p>
+                    <div style="display: flex; gap: 10px;">
+                        <img src="{% static './images/Rahul.png' %}" height="60px" alt="" style="border-radius: 100%;">
+                        <p>-Rahul Rajeev <br> Malappuram</p>
+                    </div>
+                </div>
+
+                <div class="inner-review">
+                    <p>⭐⭐⭐⭐</p>
+                    <p>Best Quality Products</p>
+                    <div style="display: flex; gap: 10px;">
+                        <img src="{% static './images/anjali.png' %}" height="60px" alt="" style="border-radius: 100%;">
+                        <p>-Ravi P <br> Ernakulam</p>
+                    </div>
+                </div>
+
+                <div class="inner-review">
+                    <p>⭐⭐⭐⭐⭐</p>
+                    <p>The milk from SK farm is so pure <br> and fresh! My whole family loves it</p>
+                    <div style="display: flex; gap: 10px;">
+                        <img src="{% static './images/anjali.png' %}" height="60px" alt="" style="border-radius: 100%;">
+                        <p>-Anakha Satheesh <br> Palakkad</p>
+                    </div>
+                </div>
+
+                <div class="inner-review">
+                    <p>⭐⭐⭐</p>
+                    <p>Best Quality Diary products</p>
+                    <div style="display: flex; gap: 10px;">
+                        <img src="{% static './images/anjali.png' %}" height="60px" alt="" style="border-radius: 100%;">
+                        <p>-Suresh Kumar <br> Alappuzha</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer style="background-color: rgb(17, 85, 17); margin-left: 50px; margin-right: 50px;">
+        <div class="footer-flex">
+        
+            <div class="first-foot">
+                <img src="{% static './images/footercow.png' %}" height="200px" alt="">
+
+                <div>
+                    <h1 style="color: white;">Visit Our Farm</h1>
+                    <p style="color: white;">We welcome you to visit our farm and experience <br> the level and caring we give to our cows.</p>
+                    <a href="{% url 'contact' %}" style="justify-content: center; color: white; text-decoration: none; display: flex;align-items: center; gap: 9px; border: 3px solid white; width: 200px; border-radius: 7px;">
+                        <p>Plan Your Visit </p> <span class="material-symbols-outlined">arrow_forward</span> 
+                    </a>
+                </div>
+            </div>
+
+            <!-- second coloumn -->
+
+            <div style="color: white;">
+                <h2>Quick Links</h2>
+                <a href="" class="footer-links">Home</a> <br>
+                <a href="./about.html" class="footer-links">About Us</a> <br>
+                <a href="./cows.html" class="footer-links">Our Cows</a> <br>
+                <a href="./products.html" class="footer-links">Products</a> <br>
+                <a href="./gallery.html" class="footer-links">Gallery</a> <br>
+                <a href="./contact.html" class="footer-links">Contact Us</a> <br>
+            </div>
+
+            <!-- third coloumn -->
+
+            <div style="color: white;">
+                <h2>Our Products</h2>
+                <a href="" class="footer-links">Diary Products</a> <br>
+                <a href="" class="footer-links">Milk</a> <br>
+                <a href="" class="footer-links">Paneer</a> <br>
+                <a href="" class="footer-links">Ghee</a> <br>
+                <a href="" class="footer-links">Other Products</a> <br>
+                <a href="" class="footer-links">All Products</a>
+            </div>
+
+
+            <!-- fourth coloumn -->
+
+            <div style="color: white;">
+                <h2>Contact Us</h2>
+                <p style="margin: 2px 0;">SK Farms </p>
+                <p style="margin: 2px 0;"> Alappuzha,Kerala ,India </p>
+                <div style="display: flex;gap: 5px; align-items: center;margin-top: -10px;"> <span class="material-symbols-outlined" style="font-size: 17px;">call</span> <p>+91 62******64</p></div>
+                <div style="display: flex; gap: 5px; align-items: center;margin-top: -25px;"> <span class="material-symbols-outlined" style="font-size: 17px;">mail</span> <p>skfarmsdiary@gmail.com</p></div>
+            </div>
+
+        </div>
+
+        <div style="text-align: center;background-color: rgb(2, 62, 2);">
+            <p style="color: white;font-family: Arial, Helvetica, sans-serif;font-size: 12px;padding-top: 3px;padding-bottom: 3px;">Ⓒ2025 SK Farms.All Rights Reserved.</p>
+        </div>
+    </footer>
+
+
+</body>
+</html>

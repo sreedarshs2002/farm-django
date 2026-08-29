@@ -1,0 +1,321 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SK FARMS</title>
+    <link rel="stylesheet" href="{% static 'skfarms.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+</head>
+<body>
+    <header>
+        <div class="main-header">
+            
+            <img src="{% static './images/logoheading.jpeg' %}" alt="" height="90px">
+                
+
+            <div>
+                <nav>
+                    <ul class="nav-div">
+                        <li><a href="{% url 'index' %}" class="nav-a">Home</a></li>
+                        <li><a href="{% url 'about' %}" class="nav-a">About Us</a> </li>
+                        <li><a href="{% url 'cows' %}" class="nav-a"> Our Cows</a></li>
+                        <li><a href="{% url 'products' %}"  style="border-bottom: 5px solid green; padding-bottom: 5px; color: green; text-decoration: none;">Products</a> </li>
+                        <li><a href="{% url 'gallery' %}" class="nav-a"> Gallery</a></li>
+                        <li><a href="{% url 'contact' %}" class="nav-a">Contact Us</a> </li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div>
+                <a href="./contact.html" style=" text-decoration: none; border-radius: 10px; border: 2px solid black; color: white; background-color: green; display: flex; align-items: center;padding-left: 20px;padding-right: 20px; gap: 3px; font-family: Arial, Helvetica, sans-serif;"> <span class="material-symbols-outlined">call</span> <p>Order Now</p></a>
+            </div>
+        </div>
+    </header>
+
+    <section>
+        <div class="prod-back-img">       
+                <h1 style="text-align: center; color: white; font-size: 60px;padding-top: 40px;margin-bottom :5px;">Our Products</h1>
+                <h4 style="text-align: center; color: white; font-size: 18px; padding-bottom: 30px; margin-top: 5px; font-family: Arial, Helvetica, sans-serif;">Fresh from our farm to your home</h4>
+        </div>
+    </section>
+
+
+
+    <!-- diary products -->
+
+    <section>
+        <div class="sec-box">
+                <div style="text-align: center;">
+                    <h1 style="color: green; "> Dairy Products</h1>
+                    <img height="26px" style="margin-top: -20px;" src="{% static './images/nothing.png' %}" alt="">
+                </div>
+
+                <!-- products section -->
+                <div class="products-prod">
+                    <div class="inner-products">
+                        <img src="{% static './images/milk.jpeg' %}" height="180px" width="100%" style="border-top-left-radius: 10px;border-top-right-radius: 10px; " alt="">
+                        <h2 class="product-name">Fresh Cow Milk</h2>
+                        <p class="font-select">Pure & healthy milk <br> from our farm.</p>
+                        <button style="text-align: center; color: white; background-color: green;border-radius: 10px;padding-right: 30px;padding: 10px; padding-left: 20px;">Know More</button> 
+                    </div>
+
+                    <div class="inner-products">
+                        <img src="{% static './images/curd.jpeg' %}" height="180px" width="100%" style="border-top-left-radius: 10px;border-top-right-radius: 10px; " alt="">
+                        <h2 class="product-name">Curd</h2>
+                        <p class="font-select">Creamy and nutritious <br> homemade curd.</p>
+                        <button style="text-align: center; color: white; background-color: green;border-radius: 10px;padding-right: 30px;padding: 10px; padding-left: 20px;">Know More</button> 
+                    </div>
+                    
+                    <div class="inner-products">
+                        <img src="{% static './images/paneer.jpeg' %}" height="180px" width="100%" style="border-top-left-radius: 10px;border-top-right-radius: 10px; " alt="">
+                        <h2 class="product-name">Paneer</h2>
+                        <p class="font-select">Fresh,Soft and protein <br> rich paneer.</p>
+                        <button style="text-align: center; color: white; background-color: green;border-radius: 10px;padding-right: 30px;padding: 10px; padding-left: 20px;">Know More</button> 
+                    </div>
+
+                    <div class="inner-products">
+                        <img src="{% static './images/butter.jpeg' %}" height="180px" width="100%" style="border-top-left-radius: 10px;border-top-right-radius: 10px; " alt="">
+                        <h2 class="product-name">Butter</h2>
+                        <p class="font-select">Made from fresh cream, <br> 100% natural.</p>
+                        <button style="text-align: center; color: white; background-color: green;border-radius: 10px;padding-right: 30px;padding: 10px; padding-left: 20px;">Know More</button> 
+                    </div>
+
+                    <div class="inner-products">
+                        <img src="{% static './images/ghee.jpeg' %}" height="180px" width="100%" style="border-top-left-radius: 10px;border-top-right-radius: 10px; " alt="">
+                        <h2 class="product-name">Cow Ghee</h2>
+                        <p class="font-select"> Pure , aromatic and <br> traditional ghee.</p>
+                        <button style="text-align: center; color: white; background-color: green;border-radius: 10px;padding-right: 30px;padding: 10px; padding-left: 20px;">Know More</button> 
+                    </div>
+
+                    <div class="inner-products">
+                        <img src="{% static './images/icecream.jpeg' %}" height="180px" width="100%" style="border-top-left-radius: 10px;border-top-right-radius: 10px; " alt="">
+                        <h2 class="product-name">Ice Cream</h2>
+                        <p class="font-select">Delicious & Creamy ice <br> creams for every mood.</p>
+                        <button style="text-align: center; color: white; background-color: green;border-radius: 10px;padding-right: 30px;padding: 10px; padding-left: 20px;">Know More</button> 
+                    </div>
+
+                    <div class="inner-products">
+                        <img src="{% static './images/cheese.jpeg' %}" height="180px" width="100%" style="border-top-left-radius: 10px;border-top-right-radius: 10px; " alt="">
+                        <h2 class="product-name">Cheese</h2>
+                        <p class="font-select">Nutritious & tasty Cheese <br> made from pure milk.</p>
+                        <button style="text-align: center; color: white; background-color: green;border-radius: 10px;padding-right: 30px;padding: 10px; padding-left: 20px;">Know More</button> 
+                    </div>
+                    
+                    <div class="inner-products">
+                        <img src="{% static './images/yogurt.jpeg' %}" height="180px" width="100%" style="border-top-left-radius: 10px;border-top-right-radius: 10px; " alt="">
+                        <h2 class="product-name">Yogurt</h2>
+                        <p class="font-select">Healthy, thick and creamy <br> yogurt for daily wellness.</p>
+                        <button style="text-align: center; color: white; background-color: green;border-radius: 10px;padding-right: 30px;padding: 10px; padding-left: 20px;">Know More</button> 
+                    </div>
+
+                    <div class="inner-products">
+                        <img src="{% static './images/milkshake.jpeg' %}" height="180px" width="100%" style="border-top-left-radius: 10px;border-top-right-radius: 10px; " alt="">
+                        <h2 class="product-name">Milkshake</h2>
+                        <p class="font-select">Refreshing milkshakes <br> made from real ingredients.</p>
+                        <button style="text-align: center; color: white; background-color: green;border-radius: 10px;padding-right: 30px;padding: 10px; padding-left: 20px;">Know More</button> 
+                    </div>
+
+                    <div class="inner-products">
+                        <img src="{% static './images/peda.jpeg' %}" height="180px" width="100%" style="border-top-left-radius: 10px;border-top-right-radius: 10px; " alt="">
+                        <h2 class="product-name">Milk Peda</h2>
+                        <p class="font-select"> Tasty , aromatic and <br> healthy Peda.</p>
+                        <button style="text-align: center; color: white; background-color: green;border-radius: 10px;padding-right: 30px;padding: 10px; padding-left: 20px;">Know More</button> 
+                    </div>
+
+                </div>
+        </div>
+    </section>
+
+
+
+    <!-- other products -->
+
+    
+
+    <section>
+        <div class="sec-box">
+                <div style="text-align: center;">
+                    <h1 style="color: green; ">Other Products</h1>
+                    <img height="26px" style="margin-top: -20px;" src="./images/nothing.png" alt="">
+                </div>
+
+                <!-- products section -->
+                <div class="products-prod">
+                    <div class="inner-products">
+                        <img src="{% static './images/vegetables.jpg' %}" height="180px" width="100%" style="border-top-left-radius: 10px;border-top-right-radius: 10px; " alt="">
+                        <h2 class="product-name">Fresh Vegetables</h2>
+                        <p class="font-select">Locally grown,fresh <br> and chemical-free.</p>
+                        <button style="text-align: center; color: white; background-color: green;border-radius: 10px;padding-right: 30px;padding: 10px; padding-left: 20px;">Know More</button> 
+                    </div>
+
+                    <div class="inner-products">
+                        <img src="{% static './images/fodder.jpg' %}" height="180px" width="100%" style="border-top-left-radius: 10px;border-top-right-radius: 10px; " alt="">
+                        <h2 class="product-name">Fodder & Hay</h2>
+                        <p class="font-select">Nutritious fodder for <br> healthy cows.</p>
+                        <button style="text-align: center; color: white; background-color: green;border-radius: 10px;padding-right: 30px;padding: 10px; padding-left: 20px;">Know More</button> 
+                    </div>
+                    
+                    <div class="inner-products">
+                        <img src="{% static './images/manure.jpg' %}" height="180px" width="100%" style="border-top-left-radius: 10px;border-top-right-radius: 10px; " alt="">
+                        <h2 class="product-name">Organic Manure</h2>
+                        <p class="font-select">100% organic manure <br> for better soil.</p>
+                        <button style="text-align: center; color: white; background-color: green;border-radius: 10px;padding-right: 30px;padding: 10px; padding-left: 20px;">Know More</button> 
+                    </div>
+
+                    <div class="inner-products">
+                        <img src="{% static './images/eggs.jpg' %}" height="180px" width="100%" style="border-top-left-radius: 10px;border-top-right-radius: 10px; " alt="">
+                        <h2 class="product-name">Farm Fresh Eggs</h2>
+                        <p class="font-select">Nutritious and healthy <br> eggs from our farm.</p>
+                        <button style="text-align: center; color: white; background-color: green;border-radius: 10px;padding-right: 30px;padding: 10px; padding-left: 20px;">Know More</button> 
+                    </div>
+
+                    <div class="inner-products">
+                        <img src="{% static './images/pickles.jpg' %}" height="180px" width="100%" style="border-top-left-radius: 10px;border-top-right-radius: 10px; " alt="">
+                        <h2 class="product-name">Pickles & More</h2>
+                        <p class="font-select">Homemade pickles and <br> traditional delights.</p>
+                        <button style="text-align: center; color: white; background-color: green;border-radius: 10px;padding-right: 30px;padding: 10px; padding-left: 20px;">Know More</button> 
+                    </div>
+
+                    <div class="inner-products">
+                        <img src="{% static './images/honey.jpg' %}" height="180px" width="100%" style="border-top-left-radius: 10px;border-top-right-radius: 10px; " alt="">
+                        <h2 class="product-name">Honey</h2>
+                        <p class="font-select">Pure & natural honey <br> straight from nature.</p>
+                        <button style="text-align: center; color: white; background-color: green;border-radius: 10px;padding-right: 30px;padding: 10px; padding-left: 20px;">Know More</button> 
+                    </div>
+
+                    <div class="inner-products">
+                        <img src="{% static './images/jam.png' %}" height="180px" width="100%" style="border-top-left-radius: 10px;border-top-right-radius: 10px; " alt="">
+                        <h2 class="product-name">Jam</h2>
+                        <p class="font-select">Tasty and nutritious jam<br> with real fruits and care.</p>
+                        <button style="text-align: center; color: white; background-color: green;border-radius: 10px;padding-right: 30px;padding: 10px; padding-left: 20px;">Know More</button> 
+                    </div>
+                    
+                    <div class="inner-products">
+                        <img src="{% static './images/quail.jpg' %}" height="180px" width="100%" style="border-top-left-radius: 10px;border-top-right-radius: 10px; " alt="">
+                        <h2 class="product-name">Quail Eggs</h2>
+                        <p class="font-select">Small in size, high<br> in nutrition.</p>
+                        <button style="text-align: center; color: white; background-color: green;border-radius: 10px;padding-right: 30px;padding: 10px; padding-left: 20px;">Know More</button> 
+                    </div>
+
+                    <div class="inner-products">
+                        <img src="{% static './images/coconutoil.jpg' %}" height="180px" width="100%" style="border-top-left-radius: 10px;border-top-right-radius: 10px; " alt="">
+                        <h2 class="product-name">Coconut oil</h2>
+                        <p class="font-select">Cold pressed coconut <br> oil for a healthy life.</p>
+                        <button style="text-align: center; color: white; background-color: green;border-radius: 10px;padding-right: 30px;padding: 10px; padding-left: 20px;">Know More</button> 
+                    </div>
+
+                    <div class="inner-products">
+                        <img src="{% static './images/bananchips.png' %}" height="180px" width="100%" style="border-top-left-radius: 10px;border-top-right-radius: 10px; " alt="">
+                        <h2 class="product-name">Banana Chips</h2>
+                        <p class="font-select"> Crispy and delicious banana chips  made from fresh,<br> quality bananas</p>
+                        <button style="text-align: center; color: white; background-color: green;border-radius: 10px;padding-right: 30px;padding: 10px; padding-left: 20px;">Know More</button> 
+                    </div>
+
+                </div>
+        </div>
+    </section>
+
+
+
+    <!-- products over -->
+
+    <section>
+        <div class="prod-last-sec-div">
+            <div class="prod-inner-last-sec-div">
+                <img src="{% static './images/flowericon-div.png' %}" height="70px" style="margin-top: 20px;" alt="">
+                <div>
+                    <h2 style="color: green;font-family: Arial, Helvetica, sans-serif;">100% Natural</h2>
+                    <p style="font-family: Arial, Helvetica, sans-serif;">No chemicals or <br> preservatives</p>
+                </div>
+            </div>
+
+            <div class="prod-inner-last-sec-div">
+                <img src="{% static './images/cowicon-prod.png' %}" height="70px" style="margin-top: 20px;" alt="">
+                <div>
+                    <h2 style="color: green;font-family: Arial, Helvetica, sans-serif;">Farm Fresh</h2>
+                    <p style="font-family: Arial, Helvetica, sans-serif;">Directly from our <br> farm to you</p>
+                </div>
+            </div>
+
+            <div class="prod-inner-last-sec-div">
+                <img src="{% static './images/heart.png' %}" height="70px" style="margin-top: 20px;" alt="">
+                <div>
+                    <h2 style="color: green;font-family: Arial, Helvetica, sans-serif;">Healthy & safe</h2>
+                    <p style="font-family: Arial, Helvetica, sans-serif;">Hygienic & healthy <br> products</p>
+                </div>
+            </div>
+
+            <div class="prod-inner-last-sec-div">
+                <img src="{% static './images/fastdelivery.png' %}" height="70px" style="margin-top: 20px;" alt="">
+                <div>
+                    <h2 style="color: green;font-family: Arial, Helvetica, sans-serif;">Quick Delivery</h2>
+                    <p style="font-family: Arial, Helvetica, sans-serif;">Fast delivery to <br> your doorstep</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer style="background-color: rgb(17, 85, 17); margin-left: 50px; margin-right: 50px; margin-top: 30px;">
+        <div class="footer-flex">
+        
+            <div class="first-foot">
+                <img src="{% static './images/footercow.png' %}" height="200px" alt="">
+
+                <div>
+                    <h1 style="color: white;">Visit Our Farm</h1>
+                    <p style="color: white;">We welcome you to visit our farm and experience <br> the level and caring we give to our cows.</p>
+                    <a href="./contact.html" style="justify-content: center; color: white; text-decoration: none; display: flex;align-items: center; gap: 9px; border: 3px solid white; width: 200px; border-radius: 7px;">
+                        <p>Plan Your Visit </p> <span class="material-symbols-outlined">arrow_forward</span> 
+                    </a>
+                </div>
+            </div>
+
+            <!-- second coloumn -->
+
+            <div style="color: white;">
+                <h2>Quick Links</h2>
+                <a href="./index.html" class="footer-links">Home</a> <br>
+                <a href="./about.html" class="footer-links">About Us</a> <br>
+                <a href="./cows.html" class="footer-links">Our Cows</a> <br>
+                <a href="./products.html" class="footer-links">Products</a> <br>
+                <a href="./gallery.html" class="footer-links">Gallery</a> <br>
+                <a href="./contact.html" class="footer-links">Contact Us</a> <br>
+            </div>
+
+            <!-- third coloumn -->
+
+            <div style="color: white;">
+                <h2>Our Products</h2>
+                <a href="" class="footer-links">Diary Products</a> <br>
+                <a href="" class="footer-links">Milk</a> <br>
+                <a href="" class="footer-links">Paneer</a> <br>
+                <a href="" class="footer-links">Ghee</a> <br>
+                <a href="" class="footer-links">Other Products</a> <br>
+                <a href="" class="footer-links">All Products</a>
+            </div>
+
+
+            <!-- fourth coloumn -->
+
+            <div style="color: white;">
+                <h2>Contact Us</h2>
+                <p style="margin: 2px 0;">SK Farms </p>
+                <p style="margin: 2px 0;"> Alappuzha,Kerala ,India </p>
+                <div style="display: flex;gap: 5px; align-items: center;margin-top: -10px;"> <span class="material-symbols-outlined" style="font-size: 17px;">call</span> <p>+91 62******64</p></div>
+                <div style="display: flex; gap: 5px; align-items: center;margin-top: -25px;"> <span class="material-symbols-outlined" style="font-size: 17px;">mail</span> <p>skfarmsdiary@gmail.com</p></div>
+            </div>
+
+        </div>
+
+        <div style="text-align: center;background-color: rgb(2, 62, 2);">
+            <p style="color: white;font-family: Arial, Helvetica, sans-serif;font-size: 12px;padding-top: 3px;padding-bottom: 3px;">Ⓒ2025 SK Farms.All Rights Reserved.</p>
+        </div>
+    </footer>
+
+
+
+</body>
+</html>

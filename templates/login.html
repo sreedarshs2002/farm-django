@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SK FARMS</title>
+    <link rel="stylesheet" href="skfarms.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+</head>
+<body>
+    <header>
+        <div class="main-header-1">
+            
+            <img src="./images/logoheading.jpeg" alt="" height="90px">
+                
+
+            <div>
+                <nav>
+                    <ul class="nav-div">
+                        <li><a href="{% url 'index' %}" class="nav-a">Home</a></li>
+                        <li><a href="{% url 'about' %}" class="nav-a">About Us</a> </li>
+                        <li><a href="{% url 'cows' %}" class="nav-a"> Our Cows</a></li>
+                        <li><a href="{% url 'products' %}" class="nav-a">Products</a> </li>
+                        <li><a href="{% url 'gallery' %}"  class="nav-a"> Gallery</a></li>
+                        <li><a href="{% url 'contact' %}" class="nav-a">Contact Us</a> </li>
+
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- <div>
+                <button style=" border-radius: 10px; border: 2px solid black; color: white; background-color: green; display: flex; align-items: center;padding-left: 20px;padding-right: 20px; gap: 3px;"> <span class="material-symbols-outlined">call</span> <p> Contact Us</p></button>
+            </div> -->
+        </div>
+    </header>
+
+    <section>
+        <div class="prod-back-img">       
+                <h1 style="text-align: center; color: white; font-size: 60px;padding-top: 40px;margin-bottom :5px;">Login</h1>
+                <!-- <h4 style="text-align: center; color: white; font-size: 18px; padding-bottom: 30px; margin-top: 5px; font-family: Arial, Helvetica, sans-serif;">We'd love to hear from you</h4> -->
+        </div>
+    </section>
+
+
+    <section>
+        <div class="contact-first" style="background-color: rgb(243,243,243); margin-top: 50px;border-radius: 20px;">
+
+            <div class="send-msg-div">
+                <h1 style="color: green;border-bottom: 3px solid green;padding: 10px 0;">Login</h1>
+                <div>
+                    <form action="login" method="POST">     
+                        {% csrf_token %}
+                    <input type="text" name="username" placeholder="Username"  style="width: 412px; height: 35px;margin-top: 5px;"> <br> <br><br>
+                    <input type="password" name="password" placeholder="Password" style="width: 412px;height: 35px;margin-top: 5px;"> <br> <br> <br>
+                    <div style="display: flex;text-align: center; gap:50px">
+                    <button style="display: flex;align-items: center;gap: 5px;background-color: green;color: white;border-radius: 10px;padding: 5px 30px;"><p>Signup</p></button>
+                    <a href="" style="text-decoration: none; color: grey;">Forgot password</a>
+                    </div>
+                    
+                    </form>
+                    <div>
+                    {% for message in messages %}
+                        <h1>{{message}}</h1>
+                    {% endfor %}
+                    </div>
+                </div>
+                <div style="display: flex; align-items: center;gap: 3px;"> <span class="material-symbols-outlined" style="color: green;">verified_user</span> <p>Your information is safe with us</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="prod-last-sec-div">
+            <div class="prod-inner-last-sec-div">
+                <img src="./images/icona.png" height="70px" style="margin-top: 20px;" alt="">
+                <div>
+                    <h2 style="color: green;font-family: Arial, Helvetica, sans-serif;">100% Natural</h2>
+                    <p style="font-family: Arial, Helvetica, sans-serif;">Pure and healthy <br> dairy products.</p>
+                </div>
+            </div>
+
+            <div class="prod-inner-last-sec-div">
+                <img src="./images/cowicon.png" height="70px" style="margin-top: 20px;" alt="">
+                <div>
+                    <h2 style="color: green;font-family: Arial, Helvetica, sans-serif;">From Our Farm</h2>
+                    <p style="font-family: Arial, Helvetica, sans-serif;">Fresh products   <br> directly from our cows. </p>
+                </div>
+            </div>
+
+            <div class="prod-inner-last-sec-div">
+                <img src="./images/heart.png" height="70px" style="margin-top: 20px;" alt="">
+                <div>
+                    <h2 style="color: green;font-family: Arial, Helvetica, sans-serif;">Best Quality</h2>
+                    <p style="font-family: Arial, Helvetica, sans-serif;">Hygienic ,safe and <br> trusted by families.</p>
+                </div>
+            </div>
+
+            <div class="prod-inner-last-sec-div">
+                <img src="./images/fastdelivery.png" height="70px" style="margin-top: 20px;" alt="">
+                <div>
+                    <h2 style="color: green;font-family: Arial, Helvetica, sans-serif;">Fast Delivery</h2>
+                    <p style="font-family: Arial, Helvetica, sans-serif;">Delivered fresh <br> to your doorstep. </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer style="background-color: rgb(17, 85, 17); margin-left: 50px; margin-right: 50px; margin-top: 30px;">
+        <div class="footer-flex">
+        
+            <div class="first-foot">
+                <img class="footer-img" src="./images/footercow.png" height="200px" alt="">
+
+                <div>
+                    <h1 style="color: white;">Visit Our Farm</h1>
+                    <p style="color: white;">We welcome you to visit our farm and experience <br> the level and caring we give to our cows.</p>
+                </div>
+            </div>
+
+            <!-- second coloumn -->
+
+            <div style="color: white;">
+                <h2>Quick Links</h2>
+                <a href="./index.html" class="footer-links">Home</a> <br>
+                <a href="./about.html" class="footer-links">About Us</a> <br>
+                <a href="./cows.html" class="footer-links">Our Cows</a> <br>
+                <a href="./products.html" class="footer-links">Products</a> <br>
+                <a href="./gallery.html" class="footer-links">Gallery</a> <br>
+                <a href="./contact.html" class="footer-links">Contact Us</a> <br>
+            </div>
+
+            <!-- third coloumn -->
+
+            <div style="color: white;">
+                <h2>Our Products</h2>
+                <a href="" class="footer-links">Diary Products</a> <br>
+                <a href="" class="footer-links">Milk</a> <br>
+                <a href="" class="footer-links">Paneer</a> <br>
+                <a href="" class="footer-links">Ghee</a> <br>
+                <a href="" class="footer-links">Other Products</a> <br>
+                <a href="" class="footer-links">All Products</a>
+            </div>
+
+
+            <!-- fourth coloumn -->
+
+            <div style="color: white;">
+                <h2>Contact Us</h2>
+                <p style="margin: 2px 0;">SK Farms </p>
+                <p style="margin: 2px 0;"> Alappuzha,Kerala ,India </p>
+                <div style="display: flex;gap: 5px; align-items: center;margin-top: -10px;"> <span class="material-symbols-outlined" style="font-size: 17px;">call</span> <p>+91 62******64</p></div>
+                <div style="display: flex; gap: 5px; align-items: center;margin-top: -25px;"> <span class="material-symbols-outlined" style="font-size: 17px;">mail</span> <p>skfarmsdiary@gmail.com</p></div>
+            </div>
+
+        </div>
+
+        <div style="text-align: center;background-color: rgb(2, 62, 2);">
+            <p style="color: white;font-family: Arial, Helvetica, sans-serif;font-size: 12px;padding-top: 3px;padding-bottom: 3px;">Ⓒ2025 SK Farms.All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
